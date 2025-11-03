@@ -9,8 +9,8 @@ def get_user_input():
     print("get_user_input")
     inp = input()
     splt = inp.split(",")
-    flt = float(splt)
-    return(flt)
+    flt = [float(i) for i in splt]
+    return flt
 
 def calc_average(flt):
     print("calc_average")
@@ -19,9 +19,9 @@ def calc_average(flt):
 
 def find_min_max(flt):
     print("find_min_max")
-    min = min(flt)
-    max = max(flt)
-    print("Min: ", min, ", Max: ", max)
+    mini = min(flt)
+    maxi = max(flt)
+    print("Min: ", mini, ", Max: ", maxi)
 
 def sort_temperature(flt):
     print("sort_temperature")
@@ -33,3 +33,13 @@ def calc_median_temperature(flt):
     print("calc_median_temperature")
     median = statistics.median(flt)
     print("Median: ", median)
+
+def main():
+    display_main_menu()
+    flt = get_user_input()
+    calc_average(flt)
+    find_min_max(flt)
+    sort_temperature(flt)
+    calc_median_temperature(flt)
+
+main()
